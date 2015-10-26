@@ -1,8 +1,8 @@
-package de.weltraumschaf.nas.server.status.impl;
+package de.weltraumschaf.nas.serverstatus.impl;
 
-import de.weltraumschaf.nas.server.status.api.Harddisk;
-import de.weltraumschaf.nas.server.status.api.Pool;
-import de.weltraumschaf.nas.server.status.api.ServerStatus;
+import de.weltraumschaf.nas.serverstatus.api.Harddisk;
+import de.weltraumschaf.nas.serverstatus.api.Pool;
+import de.weltraumschaf.nas.serverstatus.api.ServerStatus;
 import java.util.ArrayList;
 import java.util.Collection;
 

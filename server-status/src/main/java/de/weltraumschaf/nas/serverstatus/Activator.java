@@ -1,7 +1,7 @@
-package de.weltraumschaf.nas.server.status;
+package de.weltraumschaf.nas.serverstatus;
 
-import de.weltraumschaf.nas.server.status.api.ServerStatus;
-import de.weltraumschaf.nas.server.status.impl.ServerStatusImpl;
+import de.weltraumschaf.nas.serverstatus.api.ServerStatus;
+import de.weltraumschaf.nas.serverstatus.impl.ServerStatusImpl;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;

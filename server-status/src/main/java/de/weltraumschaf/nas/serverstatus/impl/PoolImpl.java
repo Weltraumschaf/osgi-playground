@@ -1,6 +1,6 @@
-package de.weltraumschaf.nas.server.status.impl;
+package de.weltraumschaf.nas.serverstatus.impl;
 
-import de.weltraumschaf.nas.server.status.api.Pool;
+import de.weltraumschaf.nas.serverstatus.api.Pool;
 
 /**
  */

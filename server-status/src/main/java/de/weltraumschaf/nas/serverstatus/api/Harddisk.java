@@ -1,4 +1,4 @@
-package de.weltraumschaf.nas.server.status.api;
+package de.weltraumschaf.nas.serverstatus.api;
 
 /**
  */
