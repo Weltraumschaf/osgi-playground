@@ -7,6 +7,6 @@ import java.util.Collection;
  */
 public interface ServerStatus {
 
-    Collection<Harddisk> disks();
+    Collection<Disk> disks();
     Collection<Pool> pools();
 }

@@ -2,7 +2,7 @@ package de.weltraumschaf.nas.serverstatus.api;
 
 /**
  */
-public interface Harddisk {
+public interface Disk {
 
     String filesystem();
     String size();
