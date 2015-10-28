@@ -3,26 +3,19 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>de.weltraumschaf.organization</groupId>
-        <artifactId>organization-parent</artifactId>
-        <version>2.0.8-SNAPSHOT</version>
+        <groupId>de.weltraumschaf.nas</groupId>
+        <artifactId>serverstatus-reactor</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>de.weltraumschaf.nas</groupId>
-    <artifactId>web-server</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <artifactId>serverstatus-impl</artifactId>
     <packaging>bundle</packaging>
 
-    <name>NAS WebServer Bundle</name>
-    <description>Serves the HTML.</description>
+    <name>NAS :: ServerStatus :: Bundle</name>
 
     <properties>
-        <bundle.activator>de.weltraumschaf.nas.webserver.Activator</bundle.activator>
-        <!--<bundle.import>de.weltraumschaf.nas.serverstatus.api</bundle.import>-->
+        <bundle.activator>de.weltraumschaf.nas.serverstatus.Activator</bundle.activator>
         <bundle.export>de.weltraumschaf.nas.serverstatus.api</bundle.export>
-
-        <org.osgi.core.version>4.3.0</org.osgi.core.version>
-        <org.apache.felix.main.version>4.0.3</org.apache.felix.main.version>
     </properties>
 
     <dependencies>
@@ -36,13 +29,11 @@
         <dependency>
             <groupId>de.weltraumschaf.nas</groupId>
             <artifactId>serverstatus-api</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 
     <build>
-        <finalName>${project.groupId}-${project.artifactId}-${project.version}</finalName>
-
         <plugins>
             <plugin>
                 <groupId>org.apache.felix</groupId>
@@ -54,7 +45,6 @@
                     <instructions>
                         <Bundle-Activator>${bundle.activator}</Bundle-Activator>
                         <Export-Package>${bundle.export}</Export-Package>
-                        <Import-Package>${bundle.import}</Import-Package>
                     </instructions>
                 </configuration>
             </plugin>
@@ -88,6 +78,7 @@
     <profiles>
         <profile>
             <id>build-for-felix</id>
+
             <dependencies>
                 <dependency>
                     <groupId>org.apache.felix</groupId>
@@ -96,25 +87,29 @@
                     <scope>provided</scope>
                 </dependency>
             </dependencies>
+
             <build>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-antrun-plugin</artifactId>
-                        <version>1.7</version>
+
                         <executions>
                             <execution>
                                 <id>compile</id>
                                 <phase>package</phase>
+
                                 <goals>
                                     <goal>run</goal>
                                 </goals>
+
                                 <configuration>
                                     <target>
                                         <pathconvert property="plugins.jars" pathsep="${path.separator}">
                                             <path refid="maven.runtime.classpath"/>
                                             <map from="${project.build.directory}${file.separator}classes" to=""/>
                                         </pathconvert>
+
                                         <pathconvert pathsep=" " property="bundles">
                                             <path path="${plugins.jars}"/>
                                             <mapper>
@@ -124,6 +119,7 @@
                                                 </chainedmapper>
                                             </mapper>
                                         </pathconvert>
+
                                         <propertyfile file="${project.build.directory}/config.properties">
                                             <entry key="felix.auto.start" value="${bundles} file:modules/${project.build.finalName}.jar"/>
                                             <entry key="org.osgi.framework.bootdelegation" value="*"/>
@@ -134,10 +130,10 @@
                             </execution>
                         </executions>
                     </plugin>
+
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-assembly-plugin</artifactId>
-                        <version>2.3</version>
                         <executions>
                             <execution>
                                 <id>create-executable-jar</id>
@@ -157,6 +153,7 @@
                 </plugins>
             </build>
         </profile>
+
         <profile>
             <id>run-on-felix</id>
             <dependencies>
@@ -167,12 +164,13 @@
                     <scope>provided</scope>
                 </dependency>
             </dependencies>
+
             <build>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-antrun-plugin</artifactId>
-                        <version>1.7</version>
+
                         <configuration>
                             <target>
                                 <property name="vm.args" value=""/>
