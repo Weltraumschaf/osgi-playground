@@ -19,6 +19,7 @@
     <properties>
         <bundle.activator>de.weltraumschaf.nas.webserver.Activator</bundle.activator>
         <bundle.import>de.weltraumschaf.nas.serverstatus.api</bundle.import>
+        <bundle.private>de.weltraumschaf.nas.webserver</bundle.private>
     </properties>
 
     <dependencies>
@@ -44,6 +45,7 @@
                     <instructions>
                         <Bundle-Activator>${bundle.activator}</Bundle-Activator>
                         <Import-Package>${bundle.import}</Import-Package>
+                        <Private-Package>${bundle.private}</Private-Package>
                     </instructions>
                 </configuration>
             </plugin>
