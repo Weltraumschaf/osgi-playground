@@ -8,7 +8,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>serverstatus-impl</artifactId>
+    <artifactId>serverstatus</artifactId>
     <packaging>bundle</packaging>
 
     <name>NAS :: ServerStatus :: Bundle</name>
