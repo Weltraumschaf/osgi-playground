@@ -16,25 +16,13 @@
     <properties>
         <bundle.activator>de.weltraumschaf.nas.serverstatus.Activator</bundle.activator>
         <bundle.export>de.weltraumschaf.nas.serverstatus.api</bundle.export>
+        <bundle.private>de.weltraumschaf.nas.serverstatus.*</bundle.private>
     </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>de.weltraumschaf.nas</groupId>
-                <artifactId>shared</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <dependencies>
         <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.core</artifactId>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -49,13 +37,12 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.3.7</version>
-                <extensions>true</extensions>
 
                 <configuration>
                     <instructions>
                         <Bundle-Activator>${bundle.activator}</Bundle-Activator>
                         <Export-Package>${bundle.export}</Export-Package>
+                        <Private-Package>${bundle.private}</Private-Package>
                     </instructions>
                 </configuration>
             </plugin>
