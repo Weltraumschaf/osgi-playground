@@ -17,12 +17,8 @@
     <description>Provides server status service.</description>
 
     <modules>
-        <module>mod-api</module>
-        <module>mod-impl</module>
+        <module>../server-status-api</module>
+        <module>../server-status-impl</module>
     </modules>
-
-    <build>
-        <finalName>${project.groupId}-${project.artifactId}-${project.version}</finalName>
-    </build>
 
 </project>

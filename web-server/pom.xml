@@ -9,7 +9,7 @@
     </parent>
 
     <groupId>de.weltraumschaf.nas</groupId>
-    <artifactId>web-server</artifactId>
+    <artifactId>webserver</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>bundle</packaging>
 
@@ -51,25 +51,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
-
-                <executions>
-                    <execution>
-                        <id>copy-to-container</id>
-                        <phase>install</phase>
-
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-
-                        <configuration>
-                            <target>
-                                <copy
-                                    file="${project.build.directory}/${project.build.finalName}.jar"
-                                    todir="${basedir}/../application/plugins"/>
-                            </target>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
