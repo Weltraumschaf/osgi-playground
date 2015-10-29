@@ -10,13 +10,13 @@ public class Activator implements BundleActivator {
 
     private static final Logger LOG = Logger.getLogger(Activator.class.getName());
     private static final String SERVICE_NAME = "de.weltraumschaf.nas.webserver.WebServer";
-    private ServiceReference serverStatusReference;
+    private ServiceReference<ServerStatus> serverStatusReference;
 
     @Override
     public void start(final BundleContext context) throws Exception {
         LOG.info(String.format("Starting bundle: %s...", SERVICE_NAME));
-        serverStatusReference = context.getServiceReference(ServerStatus.class.getName());
-        final ServerStatus statusApi = (ServerStatus)context.getService(serverStatusReference);
+        serverStatusReference = context.getServiceReference(ServerStatus.class);
+        final ServerStatus statusApi = context.getService(serverStatusReference);
         LOG.info(String.format("Bundle %s started.", SERVICE_NAME));
     }
 
