@@ -18,7 +18,7 @@
 
     <properties>
         <bundle.activator>de.weltraumschaf.nas.webserver.Activator</bundle.activator>
-        <bundle.import>de.weltraumschaf.nas.serverstatus.api</bundle.import>
+        <bundle.import>de.weltraumschaf.nas.serverstatus.api,${osgi.framework}</bundle.import>
         <bundle.private>de.weltraumschaf.nas.webserver</bundle.private>
     </properties>
 

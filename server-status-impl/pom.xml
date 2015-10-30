@@ -17,6 +17,7 @@
         <bundle.activator>de.weltraumschaf.nas.serverstatus.Activator</bundle.activator>
         <bundle.export>de.weltraumschaf.nas.serverstatus.api</bundle.export>
         <bundle.private>de.weltraumschaf.nas.serverstatus.*</bundle.private>
+        <bundle.import>${osgi.framework}</bundle.import>
     </properties>
 
     <dependencies>
@@ -42,6 +43,7 @@
                     <instructions>
                         <Bundle-Activator>${bundle.activator}</Bundle-Activator>
                         <Export-Package>${bundle.export}</Export-Package>
+                        <Import-Package>${bundle.import}</Import-Package>
                         <Private-Package>${bundle.private}</Private-Package>
                     </instructions>
                 </configuration>

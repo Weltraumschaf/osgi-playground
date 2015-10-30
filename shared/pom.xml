@@ -17,6 +17,7 @@
     <description>Shared stff.</description>
 
     <properties>
+        <osgi.framework>org.osgi.framework;version="[1.6,2.0)"</osgi.framework>
         <org.osgi.core.version>4.3.1</org.osgi.core.version>
         <org.apache.felix.main.version>5.4.0</org.apache.felix.main.version>
     </properties>

@@ -17,6 +17,10 @@ public final class Activator implements BundleActivator {
         LOG.info(String.format("Starting bundle: %s...", SERVICE_NAME));
         serverStatusReference = context.getServiceReference(ServerStatus.class);
         final ServerStatus statusApi = context.getService(serverStatusReference);
+        System.out.println("Disks:");
+        System.out.println(statusApi.disks());
+        System.out.println("Pools:");
+        System.out.println(statusApi.pools());
         LOG.info(String.format("Bundle %s started.", SERVICE_NAME));
     }
 
