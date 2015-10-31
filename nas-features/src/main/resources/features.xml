@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features
+    xmlns="http://karaf.apache.org/xmlns/features/v1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.0.0 http://karaf.apache.org/xmlns/features/v1.0.0"
+    name="nas">
+
+    <feature name="nas" version="${pom.version}">
+        <feature>nas-service</feature>
+        <feature>nas-ui</feature>
+    </feature>
+
+    <feature name="nas-service" version="${pom.version}">
+        <bundle>mvn:de.weltraumschaf.nas/nas-api/${pom.version}</bundle>
+        <bundle>mvn:de.weltraumschaf.nas/nas-impl/${pom.version}</bundle>
+    </feature>
+
+    <feature name="nas-ui" version="${pom.version}">
+        <feature>http</feature>
+        <feature>http-whiteboard</feature>
+        <bundle>mvn:de.weltraumschaf.nas/nas-api/${pom.version}</bundle>
+        <bundle>mvn:de.weltraumschaf.nas/nas-ui/${pom.version}</bundle>
+    </feature>
+
+</features>

@@ -2,6 +2,10 @@
 
 This is a project to play around with [OSGi][osgi] based on [Eclipse Equinox][equinox].
 
+## Tutorials
+
+- [Karaf Tutorial Part 1 - Installation and First application](http://liquid-reality.de/plugins/servlet/mobile#content/view/5865484)
+
 ## Links
 
 - [What is Apache Karaf?](http://stackoverflow.com/questions/17350281/what-exactly-is-apache-karaf)

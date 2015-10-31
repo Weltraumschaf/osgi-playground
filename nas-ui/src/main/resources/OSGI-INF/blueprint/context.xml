@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+    <reference id="taskService" availability="mandatory" interface="de.weltraumschaf.nas.api.TaskService" />
+    <!--<reference id="serverStatusService" availability="mandatory" interface="de.weltraumschaf.nas.api.ServerStatus" />-->
+
+    <bean id="taskServlet" class="de.weltraumschaf.nas.ui.TaskListServlet">
+        <property name="taskService" ref="taskService"></property>
+    </bean>
+
+<!--    <bean id="serverStatusService" class="de.weltraumschaf.nas.ui.TaskListServlet">
+        <property name="serverStatusService" ref="serverStatusService"></property>
+    </bean>-->
+
+    <service ref="taskServlet" interface="javax.servlet.http.HttpServlet">
+        <service-properties>
+            <entry key="alias" value="/tasklist" />
+        </service-properties>
+    </service>
+</blueprint>
