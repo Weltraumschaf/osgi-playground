@@ -1,5 +1,6 @@
 package de.weltraumschaf.nas.ui;
 
+import de.weltraumschaf.nas.api.ServerStatus;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
@@ -19,7 +20,7 @@ public final class TaskListServlet extends HttpServlet {
 
     private TaskService taskService;
 
-//    private ServerStatus serverStatusService;
+    private ServerStatus serverStatusService;
 
     @Override
     protected void doGet(final HttpServletRequest req, final HttpServletResponse resp) throws ServletException, IOException {
@@ -66,8 +67,8 @@ public final class TaskListServlet extends HttpServlet {
         this.taskService = taskService;
     }
 
-//    public void setServerStatusService(final ServerStatus serverStatusService) {
-//        this.serverStatusService = serverStatusService;
-//    }
+    public void setServerStatusService(final ServerStatus serverStatusService) {
+        this.serverStatusService = serverStatusService;
+    }
 
 }
