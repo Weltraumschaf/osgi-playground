@@ -1,8 +1,8 @@
 package de.weltraumschaf.nas.ui;
 
 import java.util.Objects;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  */
@@ -10,7 +10,7 @@ public final class Configuration {
 
     static final String PID = "de.weltraumschaf.nas.ui";
 
-    private static final Logger LOG = Logger.getLogger(Configuration.class.getName());
+    private static final Logger LOG = LoggerFactory.getLogger(Configuration.class.getName());
 
     private String title = "";
 
@@ -23,7 +23,7 @@ public final class Configuration {
     }
 
     public void updated() {
-        LOG.log(Level.INFO, "Config updated: {0}", this.toString());
+        LOG.info("Config updated: {0}", this.toString());
     }
 
     @Override

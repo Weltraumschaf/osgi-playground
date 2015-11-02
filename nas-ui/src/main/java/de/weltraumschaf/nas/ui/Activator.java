@@ -2,7 +2,8 @@ package de.weltraumschaf.nas.ui;
 
 import java.util.Dictionary;
 import java.util.Hashtable;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.Constants;
@@ -11,7 +12,7 @@ import org.osgi.service.cm.ManagedService;
 /**
  */
 public final class Activator implements BundleActivator {
-    private static final Logger LOG = Logger.getLogger(Activator.class.getName());
+    private static final Logger LOG = LoggerFactory.getLogger(Activator.class.getName());
 
     @Override
     public void start(final BundleContext context) throws Exception {
