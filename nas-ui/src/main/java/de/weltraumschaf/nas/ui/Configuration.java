@@ -8,7 +8,7 @@ import java.util.logging.Logger;
  */
 public final class Configuration {
 
-    static final String PID = "nas.cfg";
+    static final String PID = "de.weltraumschaf.nas.ui";
 
     private static final Logger LOG = Logger.getLogger(Configuration.class.getName());
 
@@ -23,7 +23,7 @@ public final class Configuration {
     }
 
     public void updated() {
-        LOG.log(Level.CONFIG, "Config updated: {0}", this.toString());
+        LOG.log(Level.INFO, "Config updated: {0}", this.toString());
     }
 
     @Override
