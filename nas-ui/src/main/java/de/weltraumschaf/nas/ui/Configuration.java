@@ -1,6 +1,5 @@
 package de.weltraumschaf.nas.ui;
 
-import de.weltraumschaf.commons.validate.Validate;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -9,7 +8,7 @@ import java.util.logging.Logger;
  */
 public final class Configuration {
 
-    static final String PID = Configuration.class.getName();
+    static final String PID = "nas.cfg";
 
     private static final Logger LOG = Logger.getLogger(Configuration.class.getName());
 
@@ -20,7 +19,7 @@ public final class Configuration {
     }
 
     public void setTitle(final String title) {
-        this.title = Validate.notEmpty(title, "title");
+        this.title = title;
     }
 
     public void updated() {

@@ -23,11 +23,6 @@
         </dependency>
 
         <dependency>
-            <groupId>de.weltraumschaf.commons</groupId>
-            <artifactId>validate</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.compendium</artifactId>
         </dependency>
