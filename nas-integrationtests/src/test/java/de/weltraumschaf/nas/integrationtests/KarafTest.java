@@ -1,5 +1,6 @@
 package de.weltraumschaf.nas.integrationtests;
 
+import de.weltraumschaf.nas.api.Task;
 import static org.ops4j.pax.exam.CoreOptions.maven;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.features;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.karafDistributionConfiguration;
@@ -12,7 +13,7 @@ import javax.inject.Inject;
 
 import de.weltraumschaf.nas.api.TaskService;
 
-import org.junit.Assert;
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.ops4j.pax.exam.Configuration;
@@ -36,18 +37,22 @@ public class KarafTest {
 
     @Configuration
     public Option[] config() {
-        MavenArtifactUrlReference karafUrl = maven()
+        final MavenArtifactUrlReference karafUrl
+            = maven()
             .groupId("org.apache.karaf")
             .artifactId("apache-karaf")
             .version("3.0.0").type("tar.gz");
-        MavenArtifactUrlReference tasklistRepo = maven()
+        final MavenArtifactUrlReference tasklistRepo
+            = maven()
             .groupId("de.weltraumschaf.nas")
             .artifactId("nas-features")
             .versionAsInProject()
             .type("xml");
         return new Option[]{
-            karafDistributionConfiguration().frameworkUrl(karafUrl).name("Apache Karaf")
-            .unpackDirectory(new File("target/exam")),
+            karafDistributionConfiguration()
+                .frameworkUrl(karafUrl)
+                .name("Apache Karaf")
+                .unpackDirectory(new File("target/exam")),
             keepRuntimeFolder(),
             features(tasklistRepo, "nas-service", "nas-ui")
         // KarafDistributionOption.debugConfiguration("5005", true),
@@ -56,8 +61,9 @@ public class KarafTest {
 
     @Test
     public void test1() throws Exception {
-        Collection<de.weltraumschaf.nas.api.Task> tasks = taskService.getTasks();
-        Assert.assertEquals(2, tasks.size());
+        final Collection<Task> tasks = taskService.getTasks();
+
+        assertEquals(2, tasks.size());
     }
 
 }
