@@ -4,17 +4,25 @@ This is a project to play around with [OSGi][osgi] based on [Apache Karaf][karaf
 
 ## Setup & Run Karaf
 
-__NOTE__: This repo  only contains Karaf for  Linux/Unix. If you want  to run it
-on  Wndows  you  must  download  the Windows  distribution  from  the  [download
+_NOTE_: This repo  only contains Karaf for  Linux/Unix. If you want  to run it
+on  Windows  you  must  download  the Windows  distribution  from  the  [download
 site](http://karaf.apache.org/index/community/download.html#Karaf3.0.5).
 
 1. run the script `setup-karaf.sh`
 2. cd into `karaf`
 3. run [Karaf][karaf] with `./bin/karaf`
-4. install [Jersey][jersey] bundles in [Karaf][karaf]
-    - bundle:install mvn:com.sun.jersey/jersey-core/1.18.1
-    - bundle:install mvn:com.sun.jersey/jersey-server/1.18.1
-    - bundle:install mvn:com.sun.jersey/jersey-servlet/1.18.1
+4. install [Jersey][jersey] bundles in [Karaf][karaf]:
+    - `bundle:install mvn:com.sun.jersey/jersey-core/1.18.1`
+    - `bundle:install mvn:com.sun.jersey/jersey-server/1.18.1`
+    - `bundle:install mvn:com.sun.jersey/jersey-servlet/1.18.1`
+5. build the features with `mvn clean install`
+6. install the features:
+    - `feature:repo-add mvn:de.weltraumschaf.nas/nas-features/1.0.0-SNAPSHOT/xml`
+    - `feature:install nas-service nas-ui`
+    
+*Hint*: If  you changed  the code you  only need to  invoke `mvn  clean deploy`.
+This will build  all the stuff and  copies the bundle JARs into  the auto deploy
+directory of Karaf (`karaf/deploy`).
 
 ## Tutorials
 
