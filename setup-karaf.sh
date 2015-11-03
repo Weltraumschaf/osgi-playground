@@ -16,7 +16,7 @@ tar xjvf "${TARBALL}"
 ln -s "${TARGET}" "${SHORTHAND}"
 
 cd "${SHORTHAND}/etc"
-ln -s "../../de.weltraumschaf.nas.ui.cfg"
+ln -s "../../etc/de.weltraumschaf.nas.ui.cfg"
 rm -v org.ops4j.pax.logging.cfg
-ln -s "../../org.ops4j.pax.logging.cfg"
+ln -s "../../etc/org.ops4j.pax.logging.cfg"
 cd -
