@@ -1,6 +1,6 @@
 # OSGi Playground
 
-This is a project to play around with [OSGi][osgi] based on [Eclipse Equinox][equinox].
+This is a project to play around with [OSGi][osgi] based on [Apache Karaf][karaf].
 
 ## Setup & Run Karaf
 
@@ -14,7 +14,7 @@ This is a project to play around with [OSGi][osgi] based on [Eclipse Equinox][eq
 
 ## Tutorials
 
-- [Karaf Tutorial Part 1 - Installation and First application](http://liquid-reality.de/plugins/servlet/mobile#content/view/5865484)
+- [Karaf Tutorials - Liquid Reality - Christian Schneider's Blog](http://liquid-reality.de/display/liquid/Karaf+Tutorials)
 
 ## Links
 
