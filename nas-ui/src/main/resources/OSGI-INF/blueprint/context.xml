@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
 
+    <bean id="bundle-activator" class="de.weltraumschaf.nas.ui.Activator"/>
+
     <reference id="taskService" availability="mandatory" interface="de.weltraumschaf.nas.api.TaskService" />
     <reference id="serverStatus" availability="mandatory" interface="de.weltraumschaf.nas.api.ServerStatus" />
 
