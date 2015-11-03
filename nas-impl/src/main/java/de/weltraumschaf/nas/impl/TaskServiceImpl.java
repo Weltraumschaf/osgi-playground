@@ -10,7 +10,7 @@ import de.weltraumschaf.nas.api.TaskService;
 
 public final class TaskServiceImpl implements TaskService {
 
-    private final Map<String, Task> tasks = new HashMap<String, Task>();
+    private final Map<String, Task> tasks = new HashMap<>();
 
     public TaskServiceImpl() {
         super();
