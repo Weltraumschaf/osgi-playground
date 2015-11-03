@@ -4,6 +4,10 @@ This is a project to play around with [OSGi][osgi] based on [Apache Karaf][karaf
 
 ## Setup & Run Karaf
 
+__NOTE__: This repo  only contains Karaf for  Linux/Unix. If you want  to run it
+on  Wndows  you  must  download  the Windows  distribution  from  the  [download
+site](http://karaf.apache.org/index/community/download.html#Karaf3.0.5).
+
 1. run the script `setup-karaf.sh`
 2. cd into `karaf`
 3. run [Karaf][karaf] with `./bin/karaf`
