@@ -7,17 +7,11 @@ import org.osgi.service.cm.ManagedService;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
-import javax.servlet.Servlet;
 import javax.ws.rs.core.Application;
 
-import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
-import org.osgi.framework.ServiceReference;
-import org.osgi.framework.ServiceRegistration;
 import org.osgi.util.tracker.ServiceTracker;
-import org.osgi.util.tracker.ServiceTrackerCustomizer;
-import com.sun.jersey.spi.container.servlet.ServletContainer;
 
 /**
  */
@@ -29,14 +23,14 @@ public final class Activator implements BundleActivator {
 
     @Override
     public void start(final BundleContext context) throws Exception {
-        LOG.info("Start NAS UI...");
+        info("Start NAS UI...");
         registerConfig(context);
 
         //Track all JAX-RS Applications
         tracker = new ServiceTracker(context, Application.class.getName(), new Customizer(context));
         tracker.open();
 
-        LOG.info("Started NAS UI.");
+        info("Started NAS UI.");
     }
 
     private void registerConfig(final BundleContext context) {
@@ -47,9 +41,14 @@ public final class Activator implements BundleActivator {
 
     @Override
     public void stop(final BundleContext context) throws Exception {
-        LOG.info("Stop NAS UI...");
+        info("Stop NAS UI...");
         tracker.close();
         tracker = null;
-        LOG.info("Stopped NAS UI.");
+        info("Stopped NAS UI.");
+    }
+
+    private void info(final String msg) {
+        LOG.info(msg);
+        System.out.println(msg);
     }
 }

@@ -23,7 +23,8 @@ public final class Configuration {
     }
 
     public void updated() {
-        LOG.info("Config updated: {0}", this.toString());
+        System.out.println(String.format("Config updated: %s", toString()));
+        LOG.info("Config updated: {0}", toString());
     }
 
     @Override
