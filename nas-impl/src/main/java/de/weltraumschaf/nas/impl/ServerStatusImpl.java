@@ -17,8 +17,7 @@ public final class ServerStatusImpl implements ServerStatus {
         final Collection<Disk> disks = new ArrayList<>();
 
         for (int i = 0; i < 3; ++i) {
-            disks.add(
-                DiskImpl.Builder.create()
+            disks.add(Disk.Builder.create()
                 .filesystem("fs" + i)
                 .product());
         }
@@ -31,8 +30,7 @@ public final class ServerStatusImpl implements ServerStatus {
         final Collection<Pool> pools = new ArrayList<>();
 
         for (int i = 0; i < 3; ++i) {
-            pools.add(
-                PoolImpl.Builder.create()
+            pools.add(Pool.Builder.create()
                 .name("foo" + i)
                 .product());
         }

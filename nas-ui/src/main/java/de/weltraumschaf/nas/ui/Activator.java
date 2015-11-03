@@ -49,6 +49,6 @@ public final class Activator implements BundleActivator {
 
     private void info(final String msg) {
         LOG.info(msg);
-        System.out.println(msg);
+        System.err.println(msg);
     }
 }
