@@ -94,7 +94,7 @@
                                 <goal>run</goal>
                             </goals>
 
-                            <phase>install</phase>
+                            <phase>deploy</phase>
 
                             <configuration>
                                 <target name="Copy files to Karaf deploy dir">
