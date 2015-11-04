@@ -2,12 +2,14 @@
 <features
     xmlns="http://karaf.apache.org/xmlns/features/v1.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.0.0 http://karaf.apache.org/xmlns/features/v1.0.0"
-    name="nas">
+    xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.0.0 http://karaf.apache.org/xmlns/features/v1.0.0">
 
-    <feature name="nas" version="${pom.version}">
+    <feature name="nas-features" version="${pom.version}">
         <feature>nas-service</feature>
         <feature>nas-ui</feature>
+        <configfile finalname="/etc/de.weltraumschaf.nas.ui.cfg">
+            mvn:de.weltraumschaf.nas/nas-features/${pom.version}/cfg
+        </configfile>
     </feature>
 
     <feature name="nas-service" version="${pom.version}">

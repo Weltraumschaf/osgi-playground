@@ -61,6 +61,10 @@
                                     <file>target/classes/features.xml</file>
                                     <type>xml</type>
                                 </artifact>
+                                <artifact>
+                                    <file>target/classes/de.weltraumschaf.nas.ui.cfg</file>
+                                    <type>cfg</type>
+                                </artifact>
                             </artifacts>
                         </configuration>
                     </execution>
