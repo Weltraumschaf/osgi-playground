@@ -68,7 +68,7 @@ public final class TaskListServlet extends HttpServlet {
     }
 
     public void setServerStatus(final ServerStatus serverStatusService) {
-        this.serverStatus = serverStatus;
+        this.serverStatus = serverStatusService;
     }
 
 }
