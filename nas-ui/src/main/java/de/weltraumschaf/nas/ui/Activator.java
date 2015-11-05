@@ -9,7 +9,6 @@ import java.util.Hashtable;
 
 import javax.ws.rs.core.Application;
 
-import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.util.tracker.ServiceTracker;
 
