@@ -18,8 +18,8 @@ site](http://karaf.apache.org/index/community/download.html#Karaf3.0.5).
 5. build the features with `mvn clean install`
 6. install the features:
     - `feature:repo-add mvn:de.weltraumschaf.nas/nas-features/1.0.0-SNAPSHOT/xml`
-    - `feature:install nas-service nas-ui`
-    
+    - `feature:install nas-features`
+
 *Hint*: If  you changed  the code you  only need to  invoke `mvn  clean deploy`.
 This will build  all the stuff and  copies the bundle JARs into  the auto deploy
 directory of Karaf (`karaf/deploy`).
