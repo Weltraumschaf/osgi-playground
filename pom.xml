@@ -28,7 +28,7 @@
     <properties>
         <org.osgi.version>4.2.0</org.osgi.version>
         <org.slf4j.version>1.7.12</org.slf4j.version>
-        <jersey.core.version>1.19</jersey.core.version>
+        <jersey.core.version>1.18.1</jersey.core.version>
 
         <karaf.deploy.directory>${project.basedir}/../karaf/deploy</karaf.deploy.directory>
     </properties>
