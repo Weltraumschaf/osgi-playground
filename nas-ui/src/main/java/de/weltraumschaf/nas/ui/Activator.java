@@ -55,7 +55,9 @@ public final class Activator {
      * @throws Exception if the bundle can't start.
      */
     public void start() throws Exception {
-        LOG.info("Start NAS UI...");
+        LOG.info("#######################");
+        LOG.info("### Starting NAS UI ###");
+        LOG.info("#######################");
         registerConfigUpdater();
         trackAllJaxRsApplications();
         LOG.info("Started NAS UI.");
@@ -67,7 +69,9 @@ public final class Activator {
      * @throws Exception if bundle can't stop
      */
     public void stop() throws Exception {
-        LOG.info("Stop NAS UI...");
+        LOG.info("#######################");
+        LOG.info("### Stopping NAS UI ###");
+        LOG.info("#######################");
         tracker.close();
         tracker = null; // Free memory because activator may still be alive in container.
         LOG.info("Stopped NAS UI.");
@@ -77,6 +81,7 @@ public final class Activator {
      * Registers a managed service to receive updates of the configuration file.
      */
     private void registerConfigUpdater() {
+        LOG.info("Register configuration update for {}.", Configuration.PID);
         @SuppressWarnings("UseOfObsoleteCollectionType")
         final Dictionary<String, Object> properties = new Hashtable<>();
         properties.put(Constants.SERVICE_PID, Configuration.PID);
@@ -84,7 +89,8 @@ public final class Activator {
     }
 
     private void trackAllJaxRsApplications() {
-        tracker = new ServiceTracker(context, Application.class.getName(), new Customizer(context));
+        LOG.info("Track JAX RS applications.");
+        tracker = new ServiceTracker(context, Application.class.getName(), new JaxRsCustomizer(context));
         tracker.open();
     }
 

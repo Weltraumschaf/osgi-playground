@@ -15,12 +15,12 @@ import org.slf4j.LoggerFactory;
 
 /**
  */
-public final class Customizer implements ServiceTrackerCustomizer {
+final class JaxRsCustomizer implements ServiceTrackerCustomizer {
 
-    private static final Logger LOG = LoggerFactory.getLogger(Customizer.class.getName());
+    private static final Logger LOG = LoggerFactory.getLogger(JaxRsCustomizer.class.getName());
     private final BundleContext context;
 
-    Customizer(final BundleContext context) {
+    JaxRsCustomizer(final BundleContext context) {
         super();
         this.context = context;
     }
@@ -28,6 +28,7 @@ public final class Customizer implements ServiceTrackerCustomizer {
     private Dictionary createProps(final ServiceReference reference) {
         final String alias = reference.getProperty("alias").toString();
         LOG.info("Alias: " + alias);
+        @SuppressWarnings("UseOfObsoleteCollectionType")
         final Dictionary<String, String> props = new Hashtable<>();
         props.put("alias", alias);
         return props;
@@ -36,7 +37,7 @@ public final class Customizer implements ServiceTrackerCustomizer {
     @Override
     public Object addingService(final ServiceReference reference) {
         final Application app = (Application) context.getService(reference);
-        LOG.info("Adding JAX-RS application: " + app);
+        LOG.info("Adding JAX-RS application: {}.", app);
 
         //For each JAX-RS Application, create a servlet wrapping that Application instance
         final ServletContainer servlet = new ServletContainer(app);
@@ -52,14 +53,14 @@ public final class Customizer implements ServiceTrackerCustomizer {
     @Override
     public void modifiedService(final ServiceReference reference, final Object service) {
         final ServiceRegistration reg = (ServiceRegistration) service;
-        LOG.info("Modifying JAX-RS application: " + reg);
+        LOG.info("Modifying JAX-RS application: {}.", reg);
         reg.setProperties(createProps(reference));
     }
 
     @Override
     public void removedService(final ServiceReference reference, final Object service) {
         final ServiceRegistration reg = (ServiceRegistration) service;
-        LOG.info("Removing JAX-RS application: " + reg);
+        LOG.info("Removing JAX-RS application: {}.", reg);
         reg.unregister();
         context.ungetService(reference);
     }
