@@ -20,6 +20,9 @@
     <feature name="nas-ui" version="${pom.version}">
         <feature>http</feature>
         <feature>http-whiteboard</feature>
+        <bundle>mvn:com.sun.jersey/jersey-core/${jersey.core.version}</bundle>
+        <bundle>mvn:com.sun.jersey/jersey-server/${jersey.core.version}</bundle>
+        <bundle>mvn:com.sun.jersey/jersey-servlet/${jersey.core.version}</bundle>
         <bundle>mvn:de.weltraumschaf.nas/nas-api/${pom.version}</bundle>
         <bundle>mvn:de.weltraumschaf.nas/nas-ui/${pom.version}</bundle>
     </feature>

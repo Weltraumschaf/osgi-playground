@@ -15,10 +15,6 @@
     <packaging>bundle</packaging>
     <name>NAS :: UI</name>
 
-    <properties>
-        <jersey.core.version>1.18.1</jersey.core.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>de.weltraumschaf.nas</groupId>
