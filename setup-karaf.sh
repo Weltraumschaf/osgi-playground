@@ -1,7 +1,8 @@
 #!/bin/bash
 
-TARBALL="apache-karaf-3.0.5.tar.gz"
 TARGET="apache-karaf-3.0.5"
+#TARGET="apache-karaf-4.0.2"
+TARBALL="${TARGET}.tar.gz"
 SHORTHAND="karaf"
 
 if [ -d "${TARGET}" ] ; then 
