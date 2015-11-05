@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  */
-final class JaxRsCustomizer implements ServiceTrackerCustomizer {
+public final class JaxRsCustomizer implements ServiceTrackerCustomizer {
 
     private static final Logger LOG = LoggerFactory.getLogger(JaxRsCustomizer.class.getName());
     private final BundleContext context;
